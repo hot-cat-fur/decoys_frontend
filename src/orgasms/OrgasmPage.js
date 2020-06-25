@@ -28,7 +28,7 @@ import {useSelector} from 'react-redux'
 
         const token=Cookies.get("token");
        
-        fetch("https://vast-reef-57428.herokuapp.com/orgasm/videos",{
+        fetch("http://vast-reef-57428.herokuapp.com/orgasm/videos",{
             method:"GET",
             headers:{
                 'Authorization':token,
