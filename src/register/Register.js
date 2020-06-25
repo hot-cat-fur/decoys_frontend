@@ -54,7 +54,7 @@ function Register(props){
 
 
       
-            fetch("http://localhost:8050/register",{
+            fetch("https://vast-reef-57428.herokuapp.com//register",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",
