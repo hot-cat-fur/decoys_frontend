@@ -32,7 +32,7 @@ class Admin extends React.Component{
     componentDidMount(){
 
         
-        fetch("https://vast-reef-57428.herokuapp.com//admin/check",{
+        fetch("https://vast-reef-57428.herokuapp.com/admin/check",{
             method:"GET",
             headers:{
                 "Authorization":Cookies.get("token")
@@ -157,7 +157,7 @@ var requestOptions = {
   
 };
 
-await fetch("http://localhost:8050/orgasm/create", requestOptions)
+await fetch("https://vast-reef-57428.herokuapp.com/orgasm/create", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
