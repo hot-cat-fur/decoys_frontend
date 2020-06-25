@@ -36,7 +36,7 @@ const Header =()=>{
 
         const data={token:Cookies.get("token")};
 
-        fetch("https://vast-reef-57428.herokuapp.com//logoff",{
+        fetch("https://vast-reef-57428.herokuapp.com/logoff",{
           method:"POST",
           headers:{
               "Content-Type":"application/json",

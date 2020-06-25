@@ -30,13 +30,17 @@ function Login(props){
   
         axios({
             method:"post",
-             url:"https://vast-reef-57428.herokuapp.com/login",
+             url:"http://localhost:8050/login",
             data:JSON.stringify(data)
         })
+ 
+        
       .then(resp=>{
 
             localStorage.setItem("logged",true);
             localStorage.setItem("user",username)
+            console.log("Header "+resp.headers);
+            console.log(Object.values(resp.headers));
             Cookies.set("token",resp.headers.authorization);
            
                   dispatcher(log());
