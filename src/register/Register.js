@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 
 import {Link}  from "react-router-dom"
-
+import Loader from '../Loader';
 import styles from '../register/register.css';
-import {useSelector,useDispatch} from 'react-redux';
-import {log} from '../actions/index.js'
+import {useSelector} from 'react-redux';
+
 
 
 
@@ -19,8 +19,10 @@ function Register(props){
     const [usernameError,setUsernameError]=useState("");
     const [passwordError,setPasswordError]=useState("");
     const [repeatPasswordError,setRepeatPasswordError]=useState("");
+    const [load,setLoad]=useState(false);
     
     const logged=useSelector(state=>state.log);
+
 
 
 
@@ -35,9 +37,10 @@ function Register(props){
         }
     },[]);
 
-   function handleSubmit(e){
+  async function handleSubmit(e){
          e.preventDefault();
 
+      
          
     
          if(usernameError.length>0 || passwordError.length>0 || repeatPasswordError.length>0 
@@ -45,6 +48,7 @@ function Register(props){
      
          }else{
 
+            setLoad(true);
         let data=JSON.stringify({
             username:username,
             password:password,
@@ -53,31 +57,34 @@ function Register(props){
 
 
 
-        
       
-            fetch("https://vast-reef-57428.herokuapp.com/register",{
+            fetch("http://localhost:8050/register",{
                 method:"POST",
-                
                 headers:{
                     "Content-Type":"application/json",
                 },
                 body:data
             }).then(resp=>{
+                console.log(resp);
                 if(resp.status>399){
+
                     setAlreadyExists("User already exists")
                     throw Error("invalid")
                 }
             })
-            .then(resp=>{
+            .then(()=>{
               
                 props.history.push("/login")
+               setLoad(false);
             }).catch(err=>{
                 console.log(err);
+                setLoad(false);
             })
 
        
        }
 
+       
     }
 
     function handleUsername(e){
@@ -173,6 +180,9 @@ function Register(props){
 
          </div>
            </div>
+
+            {load && <Loader/>}
+           
            </>
         );
     

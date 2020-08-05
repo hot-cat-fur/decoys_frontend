@@ -6,6 +6,7 @@ import Cookies from 'js-cookie'
 import {useSelector,useDispatch,Selector} from 'react-redux'
 import {log} from '../actions/index.js'
 
+import Loader from '../Loader'
 
 
 function Login(props){
@@ -14,13 +15,15 @@ function Login(props){
     const [username,setUsername] =useState("");
     const [password,setPassword] =useState("");
     const [invalidInput,setInvalidInput] =useState("");
+    const [load,setLoad] =useState(false);
 
     const logged=useSelector(state=>state.log);
+
     const dispatcher=useDispatch();
  
-    function handleSubmit(e){
+   async function handleSubmit(e){
         e.preventDefault();
-        
+           setLoad(true);
 
         let data={
             username:username,
@@ -30,25 +33,20 @@ function Login(props){
   
         axios({
             method:"post",
-             url:"https://vast-reef-57428.herokuapp.com/login",
+             url:"http://localhost:8050/login",
             data:JSON.stringify(data)
         })
- 
-        
       .then(resp=>{
-
-            localStorage.setItem("logged",true);
-            localStorage.setItem("user",username)
-            console.log("Header "+resp.headers);
-            console.log(Object.values(resp.headers));
-            Cookies.set("token",resp.headers.authorization);
-           
+            
+            Cookies.set("token",resp.headers.authorization,{expires:1});
                   dispatcher(log());
-              
+           
             props.history.push("/"); 
-        }).catch(err=>{
+        })
+        .catch(err=>{
             console.error(err);
           setInvalidInput("Invalid Username OR Password");
+          setLoad(false);
         })
 
          
@@ -98,6 +96,7 @@ function Login(props){
 
          </div>
            </div>
+           {load && <Loader/>}
            </>
         );
     }

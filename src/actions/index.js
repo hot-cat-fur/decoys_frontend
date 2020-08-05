@@ -4,3 +4,8 @@ export const log=()=>{
     }
 }
 
+export const adminLog=()=>{
+    return{
+        type:"LOG"
+    }
+}
