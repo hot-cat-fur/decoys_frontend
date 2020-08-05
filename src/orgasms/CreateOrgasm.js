@@ -33,7 +33,7 @@ function CreateOrgasm(props){
             const data=new FormData();
             data.append("file",file);
         
-            fetch(`http://localhost:8050/orgasm/create/${input}`,{
+            fetch(`https://vast-reef-57428.herokuapp.com/orgasm/create/${input}`,{
                 method:"POST",
                 headers:{
                     "Authorization":Cookies.get("token")

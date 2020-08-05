@@ -38,7 +38,7 @@ function CreateEvent(props){
         }
         
 
-        fetch("http://localhost:8050/event/create",{
+        fetch("https://vast-reef-57428.herokuapp.com/event/create",{
             method:"POST",
             headers:{
                 "Authorization":props.token,

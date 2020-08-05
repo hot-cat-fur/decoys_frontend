@@ -21,7 +21,7 @@ function Orgasm(props){
     }
 
     function deleteOrgasm(title){
-        fetch(`http://localhost:8050/orgasm/delete/own/${title}`,{
+        fetch(`https://vast-reef-57428.herokuapp.com/orgasm/delete/own/${title}`,{
             method:"DELETE",
             headers:{
                 "Authorization":Cookies.get("token")

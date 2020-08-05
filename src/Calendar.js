@@ -78,7 +78,7 @@ function Calendar(props){
 
 
     async function isAdminCheck(){
-        await fetch("http://localhost:8050/admin/check",{
+        await fetch("https://vast-reef-57428.herokuapp.com/admin/check",{
             method:"GET",
             headers:{
                 "Authorization":Cookies.get("token")
@@ -96,7 +96,7 @@ function Calendar(props){
   async function initEvents(){
    
   
-      return await fetch("http://localhost:8050/event/get/upcoming",{
+      return await fetch("https://vast-reef-57428.herokuapp.com/event/get/upcoming",{
             headers:{
                 "Authorization":Cookies.get("token")
             }

@@ -31,7 +31,7 @@ function Contact(props){
        }else{
 
         const data={from:email,text:`${text}`,subject}
-        fetch("http://localhost:8050/mail/send",{
+        fetch("https://vast-reef-57428.herokuapp.com/mail/send",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

@@ -21,7 +21,7 @@ function DonateProps(props){
     },[])
 
     async function fetchUserProps(){
-        return await fetch("http://localhost:8050/find/user/donate",{
+        return await fetch("https://vast-reef-57428.herokuapp.com/find/user/donate",{
             headers:{
                 "Authorization":Cookies.get("token")
             }
@@ -40,7 +40,7 @@ function DonateProps(props){
 
    async function handleSubmit(){
 
-    fetch("http://localhost:8050/update/donate",{
+    fetch("https://vast-reef-57428.herokuapp.com/update/donate",{
         method:"PUT",
         headers:{
             "Authorization":Cookies.get("token"),
