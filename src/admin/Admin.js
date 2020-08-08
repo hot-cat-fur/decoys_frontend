@@ -52,6 +52,8 @@ class Admin extends React.Component{
         this.setPending=this.setPending.bind(this);
         this.addOrgasm=this.addOrgasm.bind(this);
         this.makeRequest=this.makeRequest.bind(this);
+        this.findAllPendingOrgasms=this.findAllPendingOrgasms.bind(this);
+        this.findAllUsers=this.findAllUsers.bind(this);
     }
 
     componentDidMount(){
@@ -238,7 +240,15 @@ class Admin extends React.Component{
         return await this.makeRequest(url,method);
    
     }
+    async findAllUsers(){
 
+        const url=`${serverUrl}/admin/find/all/users`;
+        return await this.makeRequest(url);
+    }
+    async findAllPendingOrgasms(){
+        const url =`${serverUrl}/admin/find/all/pending`
+        return await this.makeRequest(url);
+    }
   
     render(){
 
@@ -252,7 +262,9 @@ class Admin extends React.Component{
          setOrgasmTitle:this.handleOrgasmTitle,
          setOrgasmFile:this.handleOrgasmFile,
          setPending:this.setPending,
-         handleVideo:this.handleVideo
+         handleVideo:this.handleVideo,
+         allPending:this.findAllPendingOrgasms,
+         allUsers:this.findAllUsers
         }
         return(
            this.state.valid && 

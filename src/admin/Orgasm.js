@@ -32,7 +32,9 @@ function Orgasm(props){
         // target.innerHTML = className === "pending true" ? "Pending: false" : "Pending: true";
       }}>Pending:{props.pending.toString()}
       </span> 
-       <Cassette onClick={playMe}/> <audio ref={audioRef} id="aud" src={props.videoUrl}></audio> 
+    <span className="user-org-ad">{props.user ? `USER: ${props.user.username}` : ""}</span>
+       <Cassette onClick={playMe}/> 
+       <audio ref={audioRef} id="aud" src={props.videoUrl}></audio> 
        <div className="desk-delete-org" onClick={()=>props.delete(props.title,"orgasm")}>DELETE</div>
      
     
