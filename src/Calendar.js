@@ -133,7 +133,7 @@ function Calendar(props){
                 const fixedDate = new Date();
                 fixedDate.setFullYear(year);
                 fixedDate.setMonth(month-1)
-                fixedDate.setDate(day);
+                fixedDate.setUTCDate(day);
                 fixedDate.setUTCHours(hour);
                 fixedDate.setHours(hour);
                 fixedDate.setMinutes(minute);
