@@ -31,7 +31,7 @@ function Contact(props){
        }else{
 
         const data={from:email,text:`${text}`,subject}
-        fetch("https://vast-reef-57428.herokuapp.com/mail/send",{
+        fetch("https://decoys-backend.onrender.com/mail/send",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

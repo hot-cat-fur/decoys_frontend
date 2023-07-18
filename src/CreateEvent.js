@@ -38,7 +38,7 @@ function CreateEvent(props){
         }
         
 
-        fetch("https://vast-reef-57428.herokuapp.com/event/create",{
+        fetch("https://decoys-backend.onrender.com/event/create",{
             method:"POST",
             headers:{
                 "Authorization":props.token,

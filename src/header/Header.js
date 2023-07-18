@@ -35,7 +35,7 @@ const Header =()=>{
 
         const data={token:Cookies.get("token")};
 
-        fetch("https://vast-reef-57428.herokuapp.com/logoff",{
+        fetch("https://decoys-backend.onrender.com/logoff",{
           method:"POST",
           headers:{
               "Content-Type":"application/json",
@@ -55,7 +55,7 @@ const Header =()=>{
   }
 
  async function adminCheck(){
-   await fetch("https://vast-reef-57428.herokuapp.com/admin/check",{
+   await fetch("https://decoys-backend.onrender.com/admin/check",{
       headers:{
         "Authorization":Cookies.get("token")
       }

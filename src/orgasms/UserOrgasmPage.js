@@ -47,7 +47,7 @@ function UserOrgasms(props){
 
    async function fetchData(path){
 
-       return await fetch(`https://vast-reef-57428.herokuapp.com/orgasm/find/users/${path}`,{
+       return await fetch(`https://decoys-backend.onrender.com/orgasm/find/users/${path}`,{
            method:"GET",
            headers:{
                "Authorization":Cookies.get("token")

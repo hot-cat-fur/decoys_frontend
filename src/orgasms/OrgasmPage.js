@@ -51,7 +51,7 @@ import { CSSTransition } from 'react-transition-group'
        }
       refresh();
       refreshMetaProps();
-         await fetch("https://vast-reef-57428.herokuapp.com/orgasm/find/liked",{
+         await fetch("https://decoys-backend.onrender.com/orgasm/find/liked",{
              method:"GET",
              headers:{
                  "Authorization":Cookies.get("token")
@@ -86,7 +86,7 @@ import { CSSTransition } from 'react-transition-group'
         }
         refresh();
         refreshMetaProps();
-       await fetch("https://vast-reef-57428.herokuapp.com/orgasm/find/disliked",{
+       await fetch("https://decoys-backend.onrender.com/orgasm/find/disliked",{
             method:"GET",
             headers:{
                 "Authorization":Cookies.get("token")
@@ -123,7 +123,7 @@ import { CSSTransition } from 'react-transition-group'
     }
     refresh();
     refreshMetaProps();
-       await fetch("https://vast-reef-57428.herokuapp.com/orgasm/find/random",{
+       await fetch("https://decoys-backend.onrender.com/orgasm/find/random",{
             method:"GET",
             headers:{
                 "Authorization":Cookies.get("token")
@@ -159,7 +159,7 @@ import { CSSTransition } from 'react-transition-group'
        refresh();
        
           
-       fetch(`https://vast-reef-57428.herokuapp.com/orgasm/like/${title}`,{
+       fetch(`https://decoys-backend.onrender.com/orgasm/like/${title}`,{
            method:"PUT",
            headers:{
                "Authorization":Cookies.get("token"),
@@ -170,7 +170,7 @@ import { CSSTransition } from 'react-transition-group'
      function disLikeIt(){
        refresh();
         
-        fetch(`https://vast-reef-57428.herokuapp.com/orgasm/dislike/${title}`,{
+        fetch(`https://decoys-backend.onrender.com/orgasm/dislike/${title}`,{
             method:"PUT",
             headers:{
                 "Authorization":Cookies.get("token"),

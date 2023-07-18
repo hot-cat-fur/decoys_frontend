@@ -53,8 +53,8 @@ class Stripe extends React.Component{
                 {sku:this.state.skus[this.state.index],quantity:1},
             
             ],
-            successUrl:"https://vast-reef-57428.herokuapp.com/",
-            cancelUrl:"https://vast-reef-57428.herokuapp.com/donate"
+            successUrl:"https://decoys-backend.onrender.com/",
+            cancelUrl:"https://decoys-backend.onrender.com/donate"
         });
     }
 

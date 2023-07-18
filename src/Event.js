@@ -10,7 +10,7 @@ function Event (props){
 
   function deleteEvent(){
 
-    fetch(`https://vast-reef-57428.herokuapp.com/event/delete/${id}`,{
+    fetch(`https://decoys-backend.onrender.com/event/delete/${id}`,{
       method:"DELETE",
       headers:{
         "Authorization":Cookies.get("token")

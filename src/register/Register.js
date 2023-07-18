@@ -58,7 +58,7 @@ function Register(props){
 
 
       
-            fetch("https://vast-reef-57428.herokuapp.com/register",{
+            fetch("https://decoys-backend.onrender.com/register",{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json",
